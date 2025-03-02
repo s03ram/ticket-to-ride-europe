@@ -1,42 +1,52 @@
-class TrainCard:
-    def __init__(self, color: str) -> None:
-        """init a train card
+from enum import Enum
+from dataclasses import dataclass
 
-        Args:
-            color (str): the color of the train card
-        """
+
+class TrainColor(Enum):
+    RED = "red"
+    BLUE = "blue"
+    GREEN = "green"
+    YELLOW = "yellow"
+    BLACK = "black"
+    WHITE = "white"
+    ORANGE = "orange"
+    PINK = "pink"
+    LOCOMOTIVE = "locomotive"  # Wild card
+
+
+@dataclass
+class City:
+    name: str
+    country: str
+
+
+class Card:
+    """Base abstract class for all cards"""
+    def __init__(self, card_id: int):
+        self.card_id = card_id
+
+
+class TrainCard(Card):
+    """Train cards used to claim routes"""
+    def __init__(self, card_id: int, color: TrainColor):
+        super().__init__(card_id)
         self.color = color
-        
-    def __repr__(self):
-        return self.color
-        
-    def get_color(self) -> str:
-        return self.color
-    
 
-class TicketCard:
-    def __init__(self, city_a: str, city_b: str, value: int) -> None:
-        """init a short destination ticket
-
-        Args:
-            city_a (str): starting or arriving city
-            city_b (str): starting or arriving city
-            value  (int): how many points it gaves
-        """
-        self.city_a = city_a
-        self.city_b = city_b
-        self.value  = value
-    
-    def __repr__(self):
-        return f"{self.city_a} -> {self.city_b} : {self.value}"
-    
-    def get_city_a(self):
-        return self.city_a
-    
-    def get_city_b(self):
-        return self.city_b
-    
-    def get_value(self):
-        return self.value
+    def __str__(self):
+        return f"Train Card ({self.color.value})"
 
 
+class DestinationCard(Card):
+    """Destination tickets connecting two cities"""
+    def __init__(
+            self, card_id: int, city_from: City, city_to: City, points: int
+            ):
+        super().__init__(card_id)
+        self.city_from = city_from
+        self.city_to = city_to
+        self.points = points
+        self.completed = False
+
+    def __str__(self):
+        return (f"{self.city_from.name} <-> {self.city_to.name}"
+                f"({self.points} pts)")
