@@ -5,7 +5,6 @@ from data import train_colors, tickets_short, tickets_long
 
 
 class Trains:
-    
     def __init__(self) -> None:
         self.draw = self.Draw()
         self.discard = self.Discard()
@@ -13,7 +12,6 @@ class Trains:
 
 
     class Draw:
-
         def __init__(self) -> None:
             self.deck = []
             for color in train_colors:
@@ -31,14 +29,13 @@ class Trains:
 
 
     class Offer:
-
         def __init__(self, draw, discard) -> None:
             self.deck = []
             self.check(draw, discard)
 
         def get_card(self, color) -> TrainCard:
             for train in self.deck:
-                if train.color == color:
+                if train.get_color() == color:
                     return train
             return "Color not in offer"
 
@@ -55,7 +52,8 @@ class Trains:
             for card in self.deck:
                 if card.color == "locomotive":
                     loco_count += 1
-            if loco_count >= 3: return True
+            if loco_count >= 3:
+                return True
             return False
 
         def fill(self, draw):
@@ -64,7 +62,6 @@ class Trains:
 
 
     class Discard:
-
         def __init__(self) -> None:
             self.deck = []
 

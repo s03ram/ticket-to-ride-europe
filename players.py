@@ -39,16 +39,20 @@ class Player:
         self.tickets_deck.append(tickets_draw.get_long_ticket())
 
 
+    def __repr__(self) -> str:
+        return f"Player {self.color}:\n\nTrains: {self.trains}\nStations: {self.stations}\n\nTrain cards: {[train for train in self.train_cards_deck]}\n\nTickets: {self.tickets_deck}"
+
+
     def add_card(self, card) -> None:
         """add a card in the appropriate player's deck
 
         Args:
             card (TrainCard or TicketCard): card to add
         """
-        assert type(card) == TrainCard or type(card) == TicketCard, "Can add only TrainCard or Tickets type"
-        if type(card) == TrainCard:
+        assert type(card) is TrainCard or type(card) is TicketCard, "Can add only TrainCard or Tickets type"
+        if type(card) is TrainCard:
             self.train_cards_deck.append(card)
-        elif type(card) == TicketCard:
+        elif type(card) is TicketCard:
             self.train_cards_deck.append(card)
 
 
@@ -126,8 +130,5 @@ class Player:
         stations = board[city_a][city_b][0]["stations"]
         assert len(stations) < 2 , "Can't build more than 2 stations"
         stations.append(self.color)
-        
-        
-
 
 

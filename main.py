@@ -3,7 +3,7 @@ import os
 from random import shuffle
 from boards import Board
 from players import Player
-from data import players_colors, MEDIAS_REPERTORY, train_colors
+from data import players_colors, train_colors
 
 
 def init_players(players_amount:int, trains_draw, tickets_draw):
@@ -42,58 +42,62 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def display_items(items):
-    [print(item) for item in items]
+def display_items(items, exept_first=False):
     
+    if exept_first:
+        print(items[0])
+        for i in range(1, len(items)):
+            print(f"{i} - {items[i]}")
+    else:
+        for i in range(len(items)):
+            print(f"{i+1} - {items[i]}")
+
 
 def display_hand(player):
-    print("   TRAINS DECK :")
-    display_items(player.train_cards_deck)
-    print("\n   TICKETS DECK :")
-    display_items(player.tickets_deck)
-    print("\n   TRAINS")
-    print(player.trains)
-    print("\n   STATIONS")
-    print(player.stations)
+    print(player)
     input("\nPress ENTER")
-
 
 
 def draw_train():
     items = board.trains_draw.offer.deck
-    items.append("random")
+    if "random" not in items:
+        items.append("random")
     display_items(items)
 
+    choice = input("\n>>> ")
+    if choice == "random":
+        board.trains_draw.draw.get_card()
+    else:
+        train = board.trains_draw.offer.get_card(int(choice))
+        print(f"You get : {train}")
+        input("\nPress ENTER")
 
-def main_menu():
+
+def main_menu(player):
     clear()
+    print(player,"\n")
     items = [
         "MAIN MENU",
-        "1 - Display hand",
-        "2 - Draw train",
-        "3 - Draw ticket",
-        "4 - Claim route",
-        "5 - Build station",
-        "6 - Exit"
+        "Draw train",
+        "Draw ticket",
+        "Claim route",
+        "Build station",
+        "Exit"
     ]
-    display_items(items)
+    display_items(items, True)
     
     choice = input("\n>>> ")
     if choice == "1":
         clear()
-        display_hand(player)
-
-    elif choice == "2":
-        clear()
+        print(player,"\n")
         draw_train()
-        input()
+    elif choice == "2":
+        pass
     elif choice == "3":
         pass
     elif choice == "4":
         pass
     elif choice == "5":
-        pass
-    elif choice == "6":
         exit()
 
 
@@ -105,8 +109,16 @@ players = init_players(2, board.trains_draw.draw, board.tickets_draw.draw)
 
 #############
 # Game loop #
-clear()
-playing = True
-while playing:
-    for player in players:
-        main_menu()
+try:
+    clear()
+    playing = True
+    while playing:
+        for player in players:
+            main_menu(player)
+except KeyboardInterrupt:
+    print("\n\nGame interrupted")
+    exit()
+except Exception as e:
+    print("\n\nError :", e)
+    exit()
+
