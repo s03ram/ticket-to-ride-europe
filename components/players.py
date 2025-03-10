@@ -1,4 +1,4 @@
-from cards import Card, TrainCard, DestinationCard
+from components.cards import Card, TrainCard, DestinationCard
 
 
 class Player:

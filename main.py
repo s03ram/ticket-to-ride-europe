@@ -1,5 +1,5 @@
-from game import GameController
-from players import Player
+from components.game import GameController
+from components.players import Player
 
 
 def main():

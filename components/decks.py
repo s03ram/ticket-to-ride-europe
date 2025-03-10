@@ -1,6 +1,6 @@
 from random import shuffle
 from typing import List
-from cards import Card, TrainCard, DestinationCard, TrainColor
+from components.cards import Card, TrainCard, DestinationCard, TrainColor
 
 
 class Deck:

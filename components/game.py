@@ -1,7 +1,7 @@
 from typing import List, Optional
 from enum import Enum
-from cards import TrainCard, TrainColor
-from decks import TrainDeck
+from components.cards import TrainCard, TrainColor
+from components.decks import TrainDeck
 
 
 class DrawError(Exception):
