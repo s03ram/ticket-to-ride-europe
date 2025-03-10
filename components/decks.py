@@ -18,7 +18,7 @@ class Deck:
             self.cards = self.discard_pile
             self.discard_pile = []
             self.shuffle()
-        return self.cards.pop() if self.cards else None
+        return self.cards.pop() if self.cards else Exception("Deck is empty")
 
     def discard(self, card: Card):
         """Discard a card to the discard pile"""

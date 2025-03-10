@@ -2,11 +2,12 @@ from typing import List, Optional
 from enum import Enum
 from components.cards import TrainCard, TrainColor
 from components.decks import TrainDeck
+from components.players import Player
 
 
 class DrawError(Exception):
     """Custom exception for drawing errors"""
-    pass
+    ...
 
 
 class DrawPhase(Enum):
@@ -20,7 +21,6 @@ class Game:
     def __init__(self):
         self.train_deck = TrainDeck()
         self.face_up_cards: List[TrainCard] = []
-        self.current_player = None
         self.draw_phase = DrawPhase.NOT_DRAWING
 
         # Initialize face-up cards
@@ -67,32 +67,31 @@ class Game:
         return self.train_deck.draw()
 
 
-class Player:
-    def __init__(self, name: str):
-        self.name = name
-        self.train_cards: List[TrainCard] = []
-
-    def add_card(self, card: TrainCard):
-        self.train_cards.append(card)
-
-    def get_card_count(self, color: TrainColor) -> int:
-        return sum(1 for card in self.train_cards if card.color == color)
-
-
 class GameController:
     """Handles game logic and player actions"""
-    def __init__(self):
+    def __init__(self, players: List[Player]):
         self.game = Game()
-        self.players: List[Player] = []
+        self.players = players
         self.current_player_index = 0
         self.draw_phase = DrawPhase.NOT_DRAWING
 
+    def __init_players(self):
+        """Initialize player hands"""
+        for player in self.players:
+            for _ in range(4):
+                player.add_card(self.handle_card_draw(player))
+
     def handle_card_draw(
-            self, player: Player, card_index: Optional[int] = None
+            self, player: Player,
+            card_index: Optional[int] = None
             ) -> bool:
         """
         Handle a player's attempt to draw a card
         Returns True if the player's draw phase is complete
+
+        Args:
+            player (Player): The player drawing a card
+            card_index (int, optional): The index of the face-up card to draw
         """
         try:
             if self.draw_phase == DrawPhase.NOT_DRAWING:

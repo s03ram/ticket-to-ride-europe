@@ -18,6 +18,7 @@ class Player:
         self.train_cards = []
         self.destination_cards = []
         self.train_pieces = 45
+        self.stations = 3
         self.score = 0
 
     def add_card(self, card: Card):
@@ -28,3 +29,19 @@ class Player:
             self.destination_cards.append(card)
         else:
             raise ValueError("Invalid card type")
+
+    def __str__(self):
+        """Return a string representation of the player"""
+        train_cards_str = ', '.join(
+            str(card) for card in self.train_cards
+            )
+        destination_cards_str = ', '.join(
+            str(card) for card in self.destination_cards
+            )
+        return (f"Player {self.color}:\n"
+                f"  Score: {self.score}\n"
+                f"  Train Pieces: {self.train_pieces}\n"
+                f"  Station Pieces: {self.stations}\n"
+                f"  Train Cards: {train_cards_str}\n"
+                f"  Destination Cards: {destination_cards_str}\n"
+                )

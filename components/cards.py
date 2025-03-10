@@ -33,7 +33,7 @@ class TrainCard(Card):
         self.color = color
 
     def __str__(self):
-        return f"Train Card ({self.color.value})"
+        return f"{self.color.value}"
 
 
 class DestinationCard(Card):
