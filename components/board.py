@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 from data import routes
 from draw import Trains, Tickets
-from player import Player
+from components.player import Player
 
 
 class Board:

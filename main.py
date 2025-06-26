@@ -2,7 +2,7 @@ import os
 
 from random import shuffle
 from board import Board
-from player import Player
+from components.player import Player
 from data import players_colors, train_colors
 
 
