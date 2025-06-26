@@ -1,4 +1,4 @@
-from cards import TrainCard, TicketCard
+from card import TrainCard, TicketCard
 from data import routes
 
 

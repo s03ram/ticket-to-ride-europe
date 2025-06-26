@@ -2,8 +2,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 from data import routes
-from draws import Trains, Tickets
-from players import Player
+from draw import Trains, Tickets
+from player import Player
 
 
 class Board:

@@ -1,6 +1,6 @@
 from random import shuffle
 
-from cards import TrainCard, TicketCard
+from card import TrainCard, TicketCard
 from data import train_colors, tickets_short, tickets_long
 
 

@@ -1,4 +1,4 @@
-from boards import Board
+from board import Board
 
 fail = 0
 

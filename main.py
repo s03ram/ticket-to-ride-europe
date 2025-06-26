@@ -1,8 +1,8 @@
 import os
 
 from random import shuffle
-from boards import Board
-from players import Player
+from board import Board
+from player import Player
 from data import players_colors, train_colors
 
 
