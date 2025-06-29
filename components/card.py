@@ -1,35 +1,31 @@
-class TrainCard:
-    def __init__(self, color: str) -> None:
+class Card:
+    def __init__(self, id: int) -> None:
         """init a train card
 
         Args:
             color (str): the color of the train card
         """
-        self.color = color
-        
-    def __repr__(self):
-        return self.color
-        
-    def get_color(self) -> str:
-        return self.color
-    
+        self.id = id
 
-class TicketCard:
-    def __init__(self, city_a: str, city_b: str, value: int) -> None:
-        """init a short destination ticket
+    def get_id(self) -> int:
+        return self.id
+
+
+class TicketCard(Card):
+    def __init__(self, id: int, city_a: str, city_b: str, value: int) -> None:
+        """init a ticket card
 
         Args:
+            id (int): the id of the ticket card
             city_a (str): starting or arriving city
             city_b (str): starting or arriving city
             value  (int): how many points it gaves
         """
+        super().__init__(id)
         self.city_a = city_a
         self.city_b = city_b
         self.value  = value
-    
-    def __repr__(self):
-        return f"{self.city_a} -> {self.city_b} : {self.value}"
-    
+        
     def get_city_a(self):
         return self.city_a
     
@@ -40,3 +36,34 @@ class TicketCard:
         return self.value
 
 
+class TrainCard(Card):
+    def __init__(self, id: int, color: str) -> None:
+        """init a train card
+
+        Args:
+            id (int): the id of the train card
+            color (str): the color of the train card
+        """
+        super().__init__(id)
+        self.color = color
+        
+    def get_color(self) -> str:
+        return self.color
+
+
+class City:
+    def __init__(self, id: int, name: str) -> None:
+        """init a city
+
+        Args:
+            id (int): the id of the city
+            name (str): the name of the city
+        """
+        self.id = id
+        self.name = name
+        
+    def get_id(self) -> int:
+        return self.id
+
+    def get_name(self) -> str:
+        return self.name
