@@ -1,9 +1,12 @@
+TRAIN_COLORS = ["grey", "white", "yellow", "red", "orange", "blue", "green", "pink", "locomotive"]
+
+
 class Card:
     def __init__(self, id: int) -> None:
-        """init a train card
+        """init a card
 
         Args:
-            color (str): the color of the train card
+            id (int): the id of the card
         """
         self.id = id
 

@@ -1,42 +1,88 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-from data import routes
-from draw import Trains, Tickets
-from components.player import Player
+from ..data.board_data import ROUTES, TICKETS_SHORT, TICKETS_LONG
+from .card import TicketCard, TrainCard, TRAIN_COLORS
+from .deck import Deck
+from .utils import generate_id_list
 
 
 class Board:
-
     def __init__(self) -> None:
         """Represents the board
-        
-        Variables :
-            - trains    (Trains object): trains cards draw/discard/offer
-            - tickets  (Tickets object): destination tickets cards draw/discard
-            - board (Multigraph object): graph that represents the game board
-        
-        Methods :
-            - show() : show the borad as a graph
-            
         """
-        self.trains_draw = Trains()
-        self.tickets_draw = Tickets()
+        self.trains_draw = Deck()
+        self.trains_offer = Deck()
+        self.long_tickets_draw = Deck()
+        self.short_tickets_draw = Deck()
+        self.board = self.create_weighted_graph()
         
-        # Create a weighted graph (the board)
-        self.board = nx.MultiGraph()
-        for route in routes:
-            self.board.add_edge(
+        self.init_trains_draws()
+        self.init_tickets_draws()
+
+    def init_trains_draws(self) -> None:
+        """Initialize the trains draw deck
+        """
+        ids = generate_id_list(110, (1000,2000))
+        for color in TRAIN_COLORS:
+            for _ in range(12):
+                self.trains_draw.add_card(TrainCard(color=color, id=ids.pop(0)))
+
+    def init_tickets_draws(self) -> None:
+        """Initialize the tickets draw deck
+        """
+        ids = generate_id_list(len(TICKETS_SHORT) + len(TICKETS_LONG), (2000, 3000))
+        for ticket in TICKETS_SHORT:
+            self.short_tickets_draw.add_card(TicketCard(
+                id=ids.pop(0),
+                city_a=ticket["city_a"],
+                city_b=ticket["city_b"],
+                value=ticket["value"]
+                ))
+        for ticket in TICKETS_LONG:
+            self.long_tickets_draw.add_card(TicketCard(
+                id=ids.pop(0),
+                city_a=ticket["city_a"],
+                city_b=ticket["city_b"],
+                value=ticket["value"]
+                ))
+
+    def create_weighted_graph(self) -> nx.MultiGraph:
+        """Create a weighted graph from the routes data
+        """
+        board = nx.MultiGraph()
+        for route in ROUTES:
+            board.add_edge(
                 route["city_a"],
                 route["city_b"],
                 weight     = route["lenght"],
                 color      = route["color"],
                 locomotive = route["locomotive"],
                 tunnel     = route["tunnel"],
-                owner = "",
-                stations = [])
+                owner      = None,
+                stations   = [])
+        return board
 
-            
+    def get_trains_draw(self) -> Deck:
+        """Get the trains draw deck
+        """
+        return self.trains_draw
+
+    def get_trains_offer(self) -> Deck:
+        """Get the trains draw deck
+        """
+        return self.trains_offer
+
+    def get_tickets_draw(self, ticket_type: str) -> Deck:
+        """Get the "long" or "short" tickets draw deck
+        """
+        if ticket_type == "short":
+            return self.short_tickets_draw
+        elif ticket_type == "long": 
+            return self.long_tickets_draw
+        else:
+            raise ValueError("Invalid ticket type. Use 'short' or 'long'.")
+
     def show(self):
         """Show the board under the graph form
         """
@@ -49,8 +95,3 @@ class Board:
         # Display the plot
         plt.title("Ticket to Ride : Europe")
         plt.show()
-
-
-if __name__ == "__main__":
-    board = Board()
-    board.show()

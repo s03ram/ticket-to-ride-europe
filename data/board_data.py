@@ -1,9 +1,6 @@
-MEDIAS_REPERTORY = "./medias/"
+PLAYERS_COLORS = ["black", "yellow", "red", "blue", "green"]
 
-train_colors = ["grey", "white", "yellow", "red", "orange", "blue", "green", "pink", "locomotive"]
-players_colors = ["black", "yellow", "red", "blue", "green"]
-
-cities = [
+CITIES = [
     "Amsterdam",
     "Angora",
     "Athina",
@@ -54,7 +51,7 @@ cities = [
 ]
 
 
-tickets_short = [
+TICKETS_SHORT = [
     {
         "city_a": "Athina",
         "city_b": "Angora",
@@ -256,8 +253,8 @@ tickets_short = [
         "value": 13
     }
 ]
-    
-tickets_long = [
+
+TICKETS_LONG = [
     {
         "city_a": "Brest",
         "city_b": "Petrograd",
@@ -291,7 +288,7 @@ tickets_long = [
 ]
 
 
-scoresGuide = {
+SCORE_GUIDE = {
     1:1,
     2:2,
     3:4,
@@ -301,7 +298,7 @@ scoresGuide = {
 }
 
 
-routes = [
+ROUTES = [
     {
         "city_a": "Amsterdam",
         "city_b": "London",

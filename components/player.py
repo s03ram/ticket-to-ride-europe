@@ -1,134 +1,87 @@
-from card import TrainCard, TicketCard
-from data import routes
+from .deck import Deck
+from .card import TrainCard, TicketCard
 
 
 class Player:
-
-    def __init__(self, color: str, trains_draw, tickets_draw) -> None:
-        """Represent a player
-
-        Variables :
-            - color           (str): identify the player
-            - trains          (int): tiles the player can afford
-            - stations        (int): stations the player can build
-            - train_cards_deck   (TrainCard): player's train cards deck
-            - tickets_deck (Tickets): player's destination tickets deck
-
-        Methods :
-            - add_card(card)
-                add the given card to the corresponding deck
-                card (TrainCard or Tickets)
-            - discard_ticket(Tickets)
-                remove a ticket from the player's deck
-            - discard_train_card(amount, color)
-                remove cards from the player's trains deck
-        """
+    def __init__(self, id: int, name: str, color: str, trains_deck: Deck, tickets_deck: Deck) -> None:
+        """Represent a player"""
+        self.id = id
+        self.name = name
         self.color = color
-
+        self.trains_deck = trains_deck
+        self.tickets_deck = tickets_deck
         self.trains = 45
         self.stations = 3
-
-        self.train_cards_deck = []
-        for _ in range(4):
-            self.train_cards_deck.append(trains_draw.get_card())
-
-        self.tickets_deck = []
-        for _ in range(3):
-            self.tickets_deck.append(tickets_draw.get_short_ticket())
-
-        self.tickets_deck.append(tickets_draw.get_long_ticket())
-
-
-    def __repr__(self) -> str:
-        return f"Player {self.color}:\n\nTrains: {self.trains}\nStations: {self.stations}\n\nTrain cards: {[train for train in self.train_cards_deck]}\n\nTickets: {self.tickets_deck}"
-
-
-    def add_card(self, card) -> None:
-        """add a card in the appropriate player's deck
-
-        Args:
-            card (TrainCard or TicketCard): card to add
-        """
-        assert type(card) is TrainCard or type(card) is TicketCard, "Can add only TrainCard or Tickets type"
-        if type(card) is TrainCard:
-            self.train_cards_deck.append(card)
-        elif type(card) is TicketCard:
-            self.train_cards_deck.append(card)
-
-
-    def discard_ticket(self, rm_ticket) -> None:
-        i = 0
-        while i < len(self.tickets):
-            if self.tickets[i].city_a == rm_ticket.city_a and self.tickets[i].city_b == rm_ticket.city_b:
-                self.tickets.pop(i)
-            else:
-                i += 1
-
-
-    def discard_train_card(self, amount: int, color: str) -> None:
-        """remove the right amount of cards by color
-
-        Args:
-            amount (int): quantity to remove
-            color (str): concerned color
-        """
-        i = 0
-        while i < len(self.train_cards_deck) and amount > 0:
-            if self.train_cards_deck[i].color == color:
-                self.train_cards_deck.pop(i)
-                amount -= 1
-            else:
-                i += 1
-
-
-    def draw_train_from(self, draw, **kwargs) -> None:
-        """draw a train card from the draw or the offer
-
-        draw (Deck): were to take the card (trains draw or offer)
-        keyword "color" (str): only for Offer
-        """
-        color = kwargs.get("color")
-        if color:
-            self.add_card(draw.get_card(color))
-        else :
-            self.add_card(draw.get_card())
-            
+        self.score = 0
+        self.claimed_routes = []
+        
+    def get_id(self) -> int:
+        """Get the player's ID"""
+        return self.id
     
-    def draw_tickets(self, draw) -> None:
-        """takes destination tickets 
-
-        Args:
-            draw (Tickets.Draw): tickest draw
-        """
-        for _ in range(3):
-            self.add_card(draw.get_short_ticket())
-
-
-    def claim_route(self, board, city_a, city_b, color="") -> None:
-        """Claim a route between two cities
-
-        Args:
-            board (Board): board object
-            city_a (str): first city (order do not matter)
-            city_b (str): second city (order do not matter)
-            color (str): color of the route ("" means no color)
-        """
-        for i in board[city_a][city_b]:
-            if routes[i]["color"] == color and routes[i]["owner"] == "":
-                board[city_a][city_b][i]["owner"] = self.color
-                lenght = board[city_a][city_b][i]["lenght"]
-                
+    def get_name(self) -> str:
+        """Get the player's name"""
+        return self.name
     
-    def build_station(self, board, city_a, city_b):
-        """claims a station between two cities
-
-        Args:
-            board (Board): board object
-            city_a (str): first city (order do not matter)
-            city_b (str): second city (order do not matter)
-        """
-        stations = board[city_a][city_b][0]["stations"]
-        assert len(stations) < 2 , "Can't build more than 2 stations"
-        stations.append(self.color)
-
+    def get_color(self) -> str:
+        """Get the player's color"""
+        return self.color
+    
+    def get_trains_deck(self) -> Deck:
+        """Get the player's trains deck"""
+        return self.trains_deck
+    
+    def add_train_to_deck(self, train: TrainCard) -> None:
+        """Add a train to the player's trains deck"""
+        self.trains_deck.add_card(train)
+        
+    def remove_train_from_deck(self, train: TrainCard) -> None:
+        """Remove a train from the player's trains deck"""
+        self.trains_deck.remove_card(train)
+    
+    def get_tickets_deck(self) -> Deck:
+        """Get the player's tickets deck"""
+        return self.tickets_deck
+    
+    def add_ticket_to_deck(self, ticket: TicketCard) -> None:
+        """Add a ticket to the player's tickets deck"""
+        self.tickets_deck.add_card(ticket)
+        
+    def remove_ticket_from_deck(self, ticket: TicketCard) -> None:
+        """Remove a ticket from the player's tickets deck"""
+        self.tickets_deck.remove_card(ticket)
+    
+    def get_trains_left(self) -> int:
+        """Get the number of trains the player has left"""
+        return self.trains
+    
+    def remove_train(self) -> None:
+        """Remove a train from the player's count"""
+        if self.trains > 0:
+            self.trains -= 1
+        else:
+            raise ValueError("No trains left to remove")
+    
+    def get_stations(self) -> int:
+        """Get the number of stations the player has left"""
+        return self.stations
+    
+    def remove_station(self) -> None:
+        """Remove a station from the player's count"""
+        if self.stations > 0:
+            self.stations -= 1
+        else:
+            raise ValueError("No stations left to remove")
+    
+    def get_score(self) -> int:
+        """Get the player's score"""
+        return self.score
+    
+    def get_claimed_routes(self) -> list:
+        """Get the routes claimed by the player"""
+        return self.claimed_routes
+    
+    def add_claimed_route(self, route) -> None:
+        """Add a claimed route to the player's list"""
+        self.claimed_routes.append(route)
 
