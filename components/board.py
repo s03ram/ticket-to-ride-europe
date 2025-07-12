@@ -15,13 +15,13 @@ class Board:
         self.trains_offer = Deck()
         self.long_tickets_draw = Deck()
         self.short_tickets_draw = Deck()
-        self.board = self.create_weighted_graph()
+        self.board = self.__create_weighted_graph()
         
-        self.init_trains_draws()
-        self.init_tickets_draws()
+        self.__init_trains_draw()
+        self.__init_tickets_draws()
 
 
-    def init_trains_draws(self) -> None:
+    def __init_trains_draw(self) -> None:
         """Initialize the trains draw deck
         """
         ids = generate_id_list(110, (1000,2000))
@@ -33,7 +33,7 @@ class Board:
         self.trains_draw.shuffle()
 
 
-    def init_tickets_draws(self) -> None:
+    def __init_tickets_draws(self) -> None:
         """Initialize the tickets draw deck
         """
         ids = generate_id_list(len(TICKETS_SHORT) + len(TICKETS_LONG), (2000, 3000))
@@ -55,7 +55,7 @@ class Board:
         self.long_tickets_draw.shuffle()
 
 
-    def create_weighted_graph(self) -> nx.MultiGraph:
+    def __create_weighted_graph(self) -> nx.MultiGraph:
         """Create a weighted graph from the routes data
         """
         board = nx.MultiGraph()

@@ -6,15 +6,20 @@ from components.deck import Deck
 
 class Game:
     def __init__(self) -> None:
-        self.players = list(self.__init_players(2))  # Initialize with 2 players for now
+        self.players: list[Player] = list(self.__init_players(2))  # Initialize with 2 players for now
         self.__init_board()
 
 
-    def __init_players(self, players: int):
+    def __init_players(self, players_amount: int):
         """
         Initialize players based on the number of players.
         """
-        for i in range(players):
+        if players_amount > len(PLAYERS_COLORS):
+            raise ValueError("Too many players (max 5).")
+        if players_amount < 2:
+            raise ValueError("Not enough players (min 2).")
+
+        for i in range(players_amount):
             yield Player(
                 id=i,
                 name=f"Player {i + 1}",
@@ -64,7 +69,6 @@ class Game:
         """
         loco_count = sum(1 for card in self.board.trains_offer.get_cards() if getattr(card, "color", None) == "locomotive")
         return loco_count >= 3
-
 
 
 

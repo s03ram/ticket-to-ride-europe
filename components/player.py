@@ -51,7 +51,7 @@ class Player:
         """Remove a ticket from the player's tickets deck"""
         self.tickets_deck.remove_card(ticket)
     
-    def get_trains_left(self) -> int:
+    def get_remaining_trains(self) -> int:
         """Get the number of trains the player has left"""
         return self.trains
     
@@ -62,7 +62,7 @@ class Player:
         else:
             raise ValueError("No trains left to remove")
     
-    def get_stations(self) -> int:
+    def get_remaining_stations(self) -> int:
         """Get the number of stations the player has left"""
         return self.stations
     
