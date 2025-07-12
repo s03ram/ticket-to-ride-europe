@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-from ..data.board_data import ROUTES, TICKETS_SHORT, TICKETS_LONG
+from data import ROUTES, TICKETS_SHORT, TICKETS_LONG
 from .card import TicketCard, TrainCard, TRAIN_COLORS
 from .deck import Deck
 from .utils import generate_id_list
@@ -20,6 +20,7 @@ class Board:
         self.init_trains_draws()
         self.init_tickets_draws()
 
+
     def init_trains_draws(self) -> None:
         """Initialize the trains draw deck
         """
@@ -27,6 +28,10 @@ class Board:
         for color in TRAIN_COLORS:
             for _ in range(12):
                 self.trains_draw.add_card(TrainCard(color=color, id=ids.pop(0)))
+        for _ in range(2):
+            self.trains_draw.add_card(TrainCard(color="locomotive", id=ids.pop(0)))
+        self.trains_draw.shuffle()
+
 
     def init_tickets_draws(self) -> None:
         """Initialize the tickets draw deck
@@ -46,6 +51,9 @@ class Board:
                 city_b=ticket["city_b"],
                 value=ticket["value"]
                 ))
+        self.short_tickets_draw.shuffle()
+        self.long_tickets_draw.shuffle()
+
 
     def create_weighted_graph(self) -> nx.MultiGraph:
         """Create a weighted graph from the routes data
@@ -63,15 +71,18 @@ class Board:
                 stations   = [])
         return board
 
+
     def get_trains_draw(self) -> Deck:
         """Get the trains draw deck
         """
         return self.trains_draw
 
+
     def get_trains_offer(self) -> Deck:
         """Get the trains draw deck
         """
         return self.trains_offer
+
 
     def get_tickets_draw(self, ticket_type: str) -> Deck:
         """Get the "long" or "short" tickets draw deck
@@ -82,6 +93,7 @@ class Board:
             return self.long_tickets_draw
         else:
             raise ValueError("Invalid ticket type. Use 'short' or 'long'.")
+
 
     def show(self):
         """Show the board under the graph form

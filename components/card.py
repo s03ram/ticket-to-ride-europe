@@ -1,3 +1,6 @@
+from typing import Any
+
+
 TRAIN_COLORS = ["grey", "white", "yellow", "red", "orange", "blue", "green", "pink", "locomotive"]
 
 
@@ -12,6 +15,9 @@ class Card:
 
     def get_id(self) -> int:
         return self.id
+    
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}(id={self.id})"
 
 
 class TicketCard(Card):
@@ -28,6 +34,9 @@ class TicketCard(Card):
         self.city_a = city_a
         self.city_b = city_b
         self.value  = value
+        
+    def __repr__(self) -> str:
+        return f"TicketCard(id={self.id}, city_a={self.city_a}, city_b={self.city_b}, value={self.value})"
         
     def get_city_a(self):
         return self.city_a
@@ -49,7 +58,12 @@ class TrainCard(Card):
         """
         super().__init__(id)
         self.color = color
-        
+
+
+    def __repr__(self) -> str:
+        return f"TrainCard(id={self.id}, color={self.color})"
+
+
     def get_color(self) -> str:
         return self.color
 
@@ -64,9 +78,11 @@ class City:
         """
         self.id = id
         self.name = name
-        
+
+
     def get_id(self) -> int:
         return self.id
+
 
     def get_name(self) -> str:
         return self.name
