@@ -1,0 +1,240 @@
+[
+  {
+    "short": [
+      {
+        "city_a": "Athina",
+        "city_b": "Angora",
+        "value": 5
+      },
+      {
+        "city_a": "Budapest",
+        "city_b": "Sofia",
+        "value": 5
+      },
+      {
+        "city_a": "Frankfurt",
+        "city_b": "Kobenhavn",
+        "value": 5
+      },
+      {
+        "city_a": "Rostov",
+        "city_b": "Erzurum",
+        "value": 5
+      },
+      {
+        "city_a": "Sofia",
+        "city_b": "Smyrna",
+        "value": 5
+      },
+      {
+        "city_a": "Kyiv",
+        "city_b": "Petrograd",
+        "value": 6
+      },
+      {
+        "city_a": "Warszawa",
+        "city_b": "Smolensk",
+        "value": 6
+      },
+      {
+        "city_a": "Zagrab",
+        "city_b": "Brindisi",
+        "value": 6
+      },
+      {
+        "city_a": "Zurich",
+        "city_b": "Brindisi",
+        "value": 6
+      },
+      {
+        "city_a": "Zurich",
+        "city_b": "Budapest",
+        "value": 6
+      },
+      {
+        "city_a": "Amsterdam",
+        "city_b": "Pamplona",
+        "value": 7
+      },
+      {
+        "city_a": "Brest",
+        "city_b": "Marseille",
+        "value": 7
+      },
+      {
+        "city_a": "Edinburgh",
+        "city_b": "paris",
+        "value": 7
+      },
+      {
+        "city_a": "London",
+        "city_b": "Berlin",
+        "value": 7
+      },
+      {
+        "city_a": "Paris",
+        "city_b": "Zagrab",
+        "value": 7
+      },
+      {
+        "city_a": "Barcelona",
+        "city_b": "Muchen",
+        "value": 8
+      },
+      {
+        "city_a": "Barcelona",
+        "city_b": "Bruxelles",
+        "value": 8
+      },
+      {
+        "city_a": "Berlin",
+        "city_b": "Bucuresti",
+        "value": 8
+      },
+      {
+        "city_a": "Brest",
+        "city_b": "Venezia",
+        "value": 8
+      },
+      {
+        "city_a": "Kyiv",
+        "city_b": "Sochi",
+        "value": 8
+      },
+      {
+        "city_a": "Madrid",
+        "city_b": "Dieppe",
+        "value": 8
+      },
+      {
+        "city_a": "Madrid",
+        "city_b": "Zurich",
+        "value": 8
+      },
+      {
+        "city_a": "Marseille",
+        "city_b": "Essen",
+        "value": 8
+      },
+      {
+        "city_a": "Palermo",
+        "city_b": "Constantinople",
+        "value": 8
+      },
+      {
+        "city_a": "Paris",
+        "city_b": "Wien",
+        "value": 8
+      },
+      {
+        "city_a": "Roma",
+        "city_b": "Smyrna",
+        "value": 8
+      },
+      {
+        "city_a": "Sarajevo",
+        "city_b": "Sevastopl",
+        "value": 8
+      },
+      {
+        "city_a": "Smolensk",
+        "city_b": "Rostov",
+        "value": 8
+      },
+      {
+        "city_a": "Berlin",
+        "city_b": "Roma",
+        "value": 9
+      },
+      {
+        "city_a": "Bruxelles",
+        "city_b": "Danzig",
+        "value": 9
+      },
+      {
+        "city_a": "Angora",
+        "city_b": "Kharkov",
+        "value": 10
+      },
+      {
+        "city_a": "Essen",
+        "city_b": "Kyiv",
+        "value": 10
+      },
+      {
+        "city_a": "London",
+        "city_b": "Wien",
+        "value": 10
+      },
+      {
+        "city_a": "Riga",
+        "city_b": "Bucuresti",
+        "value": 10
+      },
+      {
+        "city_a": "Venizia",
+        "city_b": "Constantinople",
+        "value": 10
+      },
+      {
+        "city_a": "Athina",
+        "city_b": "Wilno",
+        "value": 11
+      },
+      {
+        "city_a": "Stockholm",
+        "city_b": "Wien",
+        "value": 11
+      },
+      {
+        "city_a": "Amsterdam",
+        "city_b": "Wilno",
+        "value": 12
+      },
+      {
+        "city_a": "Berlin",
+        "city_b": "Moskva",
+        "value": 12
+      },
+      {
+        "city_a": "Frankfurt",
+        "city_b": "Smolensk",
+        "value": 13
+      }
+    ]
+  },
+  {
+    "long": [
+      {
+        "city_a": "Brest",
+        "city_b": "Petrograd",
+        "value": 20
+      },
+      {
+        "city_a": "Lisboa",
+        "city_b": "Danzig",
+        "value": 20
+      },
+      {
+        "city_a": "Palermo",
+        "city_b": "Moskva",
+        "value": 20
+      },
+      {
+        "city_a": "Cadiz",
+        "city_b": "Stockholm",
+        "value": 21
+      },
+      {
+        "city_a": "Edinburgh",
+        "city_b": "Athena",
+        "value": 21
+      },
+      {
+        "city_a": "Kobenhavn",
+        "city_b": "Erzurum",
+        "value": 21
+      }
+    ]
+  }
+]

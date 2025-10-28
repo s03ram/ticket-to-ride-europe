@@ -1,4 +1,4 @@
-from components.board import Board
+from src.board import Board
 
 fail = 0
 

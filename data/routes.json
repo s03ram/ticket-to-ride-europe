@@ -1,0 +1,801 @@
+[    {
+        "city_a": "Amsterdam",
+        "city_b": "London",
+        "color" : false,
+        "length": 2,
+        "locomotive": 2,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Amsterdam",
+        "city_b": "Bruxelles",
+        "color" : "grey",
+        "length": 1,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Amsterdam",
+        "city_b": "Essen",
+        "color" : "yellow",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Angora",
+        "city_b": "Smyrna",
+        "color" : "orange",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Angora",
+        "city_b": "Constantinople",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Angora",
+        "city_b": "Erzurum",
+        "color" : "grey",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Athina",
+        "city_b": "Brindisi",
+        "color" : false,
+        "length": 4,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Athina",
+        "city_b": "Sarajevo",
+        "color" : "green",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Athina",
+        "city_b": "Sofia",
+        "color" : "pink",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Athina",
+        "city_b": "Smyrna",
+        "color" : false,
+        "length": 2,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Barcelona",
+        "city_b": "Madrid",
+        "color" : "yellow",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Barcelona",
+        "city_b": "Pamplona",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Barcelona",
+        "city_b": "Marseille",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Berlin",
+        "city_b": "Frankfurt",
+        "color" : "grey",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Berlin",
+        "city_b": "Frankfurt",
+        "color" : "red",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Berlin",
+        "city_b": "Essen",
+        "color" : "blue",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Berlin",
+        "city_b": "Danzig",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Berlin",
+        "city_b": "Warszawa",
+        "color" : "pink",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Berlin",
+        "city_b": "Warszawa",
+        "color" : "yellow",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Berlin",
+        "city_b": "Wien",
+        "color" : "green",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Brest",
+        "city_b": "Dieppe",
+        "color" : "orange",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Brest",
+        "city_b": "Paris",
+        "color" : "grey",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Brest",
+        "city_b": "Pamplona",
+        "color" : "pink",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Brindisi",
+        "city_b": "Roma",
+        "color" : "white",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Brindisi",
+        "city_b": "Palermo",
+        "color" : false,
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Bruxelles",
+        "city_b": "Paris",
+        "color" : "yellow",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Bruxelles",
+        "city_b": "Paris",
+        "color" : "red",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Bruxelles",
+        "city_b": "Dieppe",
+        "color" : "green",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Bruxelles",
+        "city_b": "Frankfurt",
+        "color" : "blue",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Bucuresti",
+        "city_b": "Sofia",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Bucuresti",
+        "city_b": "Budapest",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Bucuresti",
+        "city_b": "Kyiv",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Bucuresti",
+        "city_b": "Sevastopol",
+        "color" : "white",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Bucuresti",
+        "city_b": "Constantinople",
+        "color" : "yellow",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Budapest",
+        "city_b": "Sarajevo",
+        "color" : "pink",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Budapest",
+        "city_b": "Zagrab",
+        "color" : "orange",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Budapest",
+        "city_b": "Wien",
+        "color" : "red",
+        "length": 1,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Budapest",
+        "city_b": "Wien",
+        "color" : "white",
+        "length": 1,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Budapest",
+        "city_b": "Kyiv",
+        "color" : false,
+        "length": 6,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Cadiz",
+        "city_b": "Madrid",
+        "color" : "orange",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Cadiz",
+        "city_b": "Lisboa",
+        "color" : "blue",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Constantinople",
+        "city_b": "Smyrna",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Constantinople",
+        "city_b": "Sofia",
+        "color" : "blue",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Constantinople",
+        "city_b": "Sevastopol",
+        "color" : false,
+        "length": 4,
+        "locomotive": 2,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Danzig",
+        "city_b": "Riga",
+        "color" : "grey",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Danzig",
+        "city_b": "Warszawa",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Dieppe",
+        "city_b": "Paris",
+        "color" : "pink",
+        "length": 1,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Dieppe",
+        "city_b": "London",
+        "color" : false,
+        "length": 2,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Dieppe",
+        "city_b": "London",
+        "color" : false,
+        "length": 2,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Edinburgh",
+        "city_b": "London",
+        "color" : "orange",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Edinburgh",
+        "city_b": "London",
+        "color" : "grey",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Erzurum",
+        "city_b": "Sochi",
+        "color" : "red",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Erzurum",
+        "city_b": "Sevastopol",
+        "color" : false,
+        "length": 4,
+        "locomotive": 2,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Essen",
+        "city_b": "Frankfurt",
+        "color" : "green",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Essen",
+        "city_b": "Kobenhavn",
+        "color" : false,
+        "length": 3,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Essen",
+        "city_b": "Kobenhavn",
+        "color" : false,
+        "length": 3,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Frankfurt",
+        "city_b": "Munchen",
+        "color" : "pink",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Frankfurt",
+        "city_b": "Paris",
+        "color" : "white",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Frankfurt",
+        "city_b": "Paris",
+        "color" : "orange",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kharkov",
+        "city_b": "Moskva",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kharkov",
+        "city_b": "Kyiv",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kharkov",
+        "city_b": "Rostov",
+        "color" : "green",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kobenhavn",
+        "city_b": "Stockholm",
+        "color" : "white",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kobenhavn",
+        "city_b": "Stockholm",
+        "color" : "yellow",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kyiv",
+        "city_b": "Warszawa",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kyiv",
+        "city_b": "Wilno",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Kyiv",
+        "city_b": "Smolensk",
+        "color" : "red",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Lisboa",
+        "city_b": "Madrid",
+        "color" : "pink",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Madrid",
+        "city_b": "Pamplona",
+        "color" : "grey",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Madrid",
+        "city_b": "Pamplona",
+        "color" : "white",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Marseille",
+        "city_b": "Pamplona",
+        "color" : "red",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Marseille",
+        "city_b": "Paris",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Marseille",
+        "city_b": "Zurich",
+        "color" : "pink",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Marseille",
+        "city_b": "Roma",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Moskva",
+        "city_b": "Petrograd",
+        "color" : "white",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Moskva",
+        "city_b": "Smolensk",
+        "color" : "orange",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Munchen",
+        "city_b": "Zurich",
+        "color" : "yellow",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Munchen",
+        "city_b": "Venezia",
+        "color" : "blue",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Munchen",
+        "city_b": "Wien",
+        "color" : "orange",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Palermo",
+        "city_b": "Roma",
+        "color" : false,
+        "length": 4,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Palermo",
+        "city_b": "Smyrna",
+        "color" : false,
+        "length": 6,
+        "locomotive": 2,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Pamplona",
+        "city_b": "Paris",
+        "color" : "blue",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Pamplona",
+        "city_b": "Paris",
+        "color" : "green",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Paris",
+        "city_b": "Zurich",
+        "color" : false,
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Petrograd",
+        "city_b": "Stockholm",
+        "color" : false,
+        "length": 8,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Petrograd",
+        "city_b": "Riga",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Petrograd",
+        "city_b": "Wilno",
+        "color" : "blue",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Riga",
+        "city_b": "Wilno",
+        "color" : "green",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Roma",
+        "city_b": "Venezia",
+        "color" : "grey",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Rostov",
+        "city_b": "Sochi",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Rostov",
+        "city_b": "Sevastopol",
+        "color" : false,
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Sarajevo",
+        "city_b": "Zagrab",
+        "color" : "red",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Sarajevo",
+        "city_b": "Sofia",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Sevastopol",
+        "city_b": "Sochi",
+        "color" : false,
+        "length": 2,
+        "locomotive": 1,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Smolensk",
+        "city_b": "Wilno",
+        "color" : "yellow",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Venezia",
+        "city_b": "Zurich",
+        "color" : "green",
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : true
+    },
+    {
+        "city_a": "Venezia",
+        "city_b": "Zagrab",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Warszawa",
+        "city_b": "Wilno",
+        "color" : "red",
+        "length": 3,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Warszawa",
+        "city_b": "Wien",
+        "color" : "blue",
+        "length": 4,
+        "locomotive": 0,
+        "tunnel" : false
+    },
+    {
+        "city_a": "Wien",
+        "city_b": "Zagrab",
+        "color" : false,
+        "length": 2,
+        "locomotive": 0,
+        "tunnel" : false
+    }
+]

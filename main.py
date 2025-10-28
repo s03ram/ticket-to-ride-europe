@@ -1,8 +1,8 @@
 from random import shuffle
-from components.board import Board
-from components.player import Player
+from src.board import Board
+from src.player import Player
 from data.board_data import PLAYERS_COLORS
-from components.deck import Deck
+from src.deck import Deck
 
 class Game:
     def __init__(self) -> None:

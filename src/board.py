@@ -1,10 +1,13 @@
 import networkx as nx
+import json
 import matplotlib.pyplot as plt
 
-from data import ROUTES, TICKETS_SHORT, TICKETS_LONG
-from .card import TicketCard, TrainCard, TRAIN_COLORS
-from .deck import Deck
-from .utils import generate_id_list
+from data.models.route import RouteModel
+from data.models.ticket import TicketModel
+import data.settings as settings
+from src.card import TicketCard, TrainCard, TRAIN_COLORS
+from src.deck import Deck
+from src.utils import generate_id_list
 
 
 class Board:
@@ -13,13 +16,37 @@ class Board:
         """
         self.trains_draw = Deck()
         self.trains_offer = Deck()
+
+        self.long_tickets = list[TicketModel]
         self.long_tickets_draw = Deck()
+
+        self.short_tickets = list[TicketModel]
         self.short_tickets_draw = Deck()
+
         self.board = self.__create_weighted_graph()
+        self.routes: list[RouteModel] = []
         
         self.__init_trains_draw()
         self.__init_tickets_draws()
+        self.__init_routes()
+        self.__init_tickets()
 
+    def __init_tickets(self) -> None:
+        """Initialize the tickets from the TICKETS data
+        """
+        with open(settings.TICKETS_FILE, "r", encoding="utf-8") as file:
+            tickets_data = json.load(file)
+        self.short_ticket = [TicketModel(**ticket) for ticket in tickets_data["short"]]
+        self.long_ticket = [TicketModel(**ticket) for ticket in tickets_data["long"]]
+
+    def __init_routes(self) -> None:
+        """Initialize the routes from the ROUTES data
+        """
+        with open(settings.ROUTES_FILE, "r", encoding="utf-8") as file:
+            routes_data = json.load(file)
+        for route in routes_data:
+            route_model = RouteModel(**route)
+            self.routes.append(route_model)
 
     def __init_trains_draw(self) -> None:
         """Initialize the trains draw deck
@@ -36,17 +63,14 @@ class Board:
     def __init_tickets_draws(self) -> None:
         """Initialize the tickets draw deck
         """
-        ids = generate_id_list(len(TICKETS_SHORT) + len(TICKETS_LONG), (2000, 3000))
-        for ticket in TICKETS_SHORT:
+        for ticket in self.short_tickets:
             self.short_tickets_draw.add_card(TicketCard(
-                id=ids.pop(0),
                 city_a=ticket["city_a"],
                 city_b=ticket["city_b"],
                 value=ticket["value"]
                 ))
         for ticket in TICKETS_LONG:
             self.long_tickets_draw.add_card(TicketCard(
-                id=ids.pop(0),
                 city_a=ticket["city_a"],
                 city_b=ticket["city_b"],
                 value=ticket["value"]
@@ -59,14 +83,14 @@ class Board:
         """Create a weighted graph from the routes data
         """
         board = nx.MultiGraph()
-        for route in ROUTES:
+        for route in self.routes:
             board.add_edge(
-                route["city_a"],
-                route["city_b"],
-                weight     = route["lenght"],
-                color      = route["color"],
-                locomotive = route["locomotive"],
-                tunnel     = route["tunnel"],
+                route.city_a,
+                route.city_b,
+                weight     = route.length,
+                color      = route.color,
+                locomotive = route.locomotive,
+                tunnel     = route.tunnel,
                 owner      = None,
                 stations   = [])
         return board

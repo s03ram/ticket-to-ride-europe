@@ -1,11 +1,5 @@
-from typing import Any
-
-
-TRAIN_COLORS = ["grey", "white", "yellow", "red", "orange", "blue", "green", "pink", "locomotive"]
-
-
 class Card:
-    def __init__(self, id: int) -> None:
+    def __init__(self, id = None) -> None:
         """init a card
 
         Args:
@@ -21,7 +15,7 @@ class Card:
 
 
 class TicketCard(Card):
-    def __init__(self, id: int, city_a: str, city_b: str, value: int) -> None:
+    def __init__(self, city_a: str, city_b: str, value: int) -> None:
         """init a ticket card
 
         Args:
@@ -30,7 +24,7 @@ class TicketCard(Card):
             city_b (str): starting or arriving city
             value  (int): how many points it gaves
         """
-        super().__init__(id)
+        super().__init__()
         self.city_a = city_a
         self.city_b = city_b
         self.value  = value

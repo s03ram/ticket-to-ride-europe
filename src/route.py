@@ -1,5 +1,3 @@
-
-
 class Route:
     def __init__(self, start: str, end: str, length: int, color: str, locomotive: int, tunnel: bool):
         self.start = start
