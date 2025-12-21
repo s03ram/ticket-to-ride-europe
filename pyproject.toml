@@ -1,0 +1,11 @@
+[project]
+name = "ticket-to-ride-europe"
+version = "0.1.0"
+description = "A fun board game !"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "networkx>=3.6.1",
+    "pydantic>=2.12.5",
+]
