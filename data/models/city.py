@@ -1,12 +1,51 @@
-from pydantic import BaseModel, field_validator
-from data.cities import CITIES
+from enum import Enum
 
-
-class CityModel(BaseModel):
-    name: str
-
-    @field_validator("name", mode="after")
-    @classmethod
-    def validate_name(cls, value: str) -> None:
-        if value.capitalize() not in CITIES:
-            raise ValueError(f"Invalid city name: {value}")
+class City(str, Enum):
+    """Represents a city in the game"""
+    AMSTERDAM = "Amsterdam"
+    ANGORA = "Angora"
+    ATHINA = "Athina"
+    BARCELONA = "Barcelona"
+    BERLIN = "Berlin"
+    BREST = "Brest"
+    BRINDISI = "Brindisi"
+    BRUXELLES = "Bruxelles"
+    BUCURESTI = "Bucuresti"
+    BUDAPEST = "Budapest"
+    CADIZ = "Cadiz"
+    CONSTANTINOPLE = "Constantinople"
+    DANZIG = "Danzig"
+    DIEPPE = "Dieppe"
+    EDINBURGH = "Edinburgh"
+    ERZURUM = "Erzurum"
+    ESSEN = "Essen"
+    FRANKFURT = "Frankfurt"
+    KHARKOV = "Kharkov"
+    KOBENHAVN = "Kobenhavn"
+    KYIV = "Kyiv"
+    LISBOA = "Lisboa"
+    LONDON = "London"
+    MADRID = "Madrid"
+    MARSEILLE = "Marseille"
+    MOSKVA = "Moskva"
+    MUNCHEN = "Munchen"
+    PALERMO = "Palermo"
+    PAMPLONA = "Pamplona"
+    PARIS = "Paris"
+    PETROGRAD = "Petrograd"
+    RIGA = "Riga"
+    ROMA = "Roma"
+    ROSTOV = "Rostov"
+    SARAJEVO = "Sarajevo"
+    SEVASTOPOL = "Sevastopol"
+    SMOLENSK = "Smolensk"
+    SMYRNA = "Smyrna"
+    SOCHI = "Sochi"
+    SOFIA = "Sofia"
+    STOCKHOLM = "Stockholm"
+    VENEZIA = "Venezia"
+    WARSZAWA = "Warszawa"
+    WIEN = "Wien"
+    WILNO = "Wilno"
+    ZAGRAB = "Zagrab"
+    ZURICH = "Zurich"

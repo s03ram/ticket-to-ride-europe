@@ -1,10 +1,10 @@
 from pydantic import BaseModel
 from typing import Literal
-from data.models.city import CityModel
+from data.models.city import City
 
 
 class TicketModel(BaseModel):
-    city_a: CityModel
-    city_b: CityModel
+    city_a: City
+    city_b: City
     value: int
     length: Literal["short", "long"]

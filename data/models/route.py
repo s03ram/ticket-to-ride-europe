@@ -1,18 +1,17 @@
-from pydantic import BaseModel, field_validator
-from data.models.city import CityModel
-from data.colors import TRAIN_COLORS
+from pydantic import BaseModel
+from typing import Optional
+from data.models.city import City
+from uuid import UUID
 
 
-class RouteModel(BaseModel):
-    city_a: CityModel
-    city_b: CityModel
+class Route(BaseModel):
+    city_a: City
+    city_b: City
     length: int
-    color: str | bool
-    locomotive: int
-    tunnel: bool
+    color: Optional[str] = None
+    locomotive: Optional[bool] = False
+    tunnel: Optional[bool] = False
+    claimed_by: Optional[UUID] = None
 
-    @field_validator("color", mode="after")
-    @classmethod
-    def validate_color(cls, value: str | bool) -> None:
-        if value not in TRAIN_COLORS:
-            raise ValueError(f"Invalid train color: {value}")
+    def is_claimed(self) -> bool:
+        return self.claimed_by is not None
