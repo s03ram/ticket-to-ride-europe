@@ -1,15 +1,10 @@
 import networkx as nx
 import json
-import sys
-from pathlib import Path
-
-# Ensure project root is on sys.path so top-level package `data` is importable
-sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import data.settings as settings
-from data.models.route import Route
+from src.models.route import Route
 from typing import Optional, List, Dict
-from uuid import UUID, uuid4
+from uuid import UUID
 
 
 class Board:

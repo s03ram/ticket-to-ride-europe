@@ -1,9 +1,8 @@
 from uuid import UUID, uuid4
 from typing import List
 from pydantic import BaseModel, Field
-from data.models.cards import TrainCard, DestinationTicket
-from data.models.colors import TrainColor, PlayerColor
-from data.models.route import Route
+from src.models.cards import TrainCard, DestinationTicket
+from src.models.colors import PlayerColor
 
 
 class Player(BaseModel):

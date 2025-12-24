@@ -1,6 +1,7 @@
 from uuid import UUID, uuid4
 from pydantic import BaseModel, Field
-from data.models.colors import TrainColor
+from src.models.colors import TrainColor
+from typing import Literal
 
 class TrainCard(BaseModel):
     """Represents a single train card"""
@@ -17,6 +18,7 @@ class DestinationTicket(BaseModel):
     city1: str
     city2: str
     points: int
+    length: Literal["short", "long"]
     
     class Config:
         frozen = True
