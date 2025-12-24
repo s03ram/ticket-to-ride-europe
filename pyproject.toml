@@ -9,3 +9,11 @@ dependencies = [
     "networkx>=3.6.1",
     "pydantic>=2.12.5",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=3.4.0",
+    "black>=24.1.0",
+    "isort>=5.13.0",
+    "flake8>=6.1.0",
+]

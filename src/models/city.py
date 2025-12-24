@@ -1,7 +1,9 @@
 from enum import Enum
 
+
 class City(str, Enum):
     """Represents a city in the game"""
+
     AMSTERDAM = "Amsterdam"
     ANGORA = "Angora"
     ATHINA = "Athina"

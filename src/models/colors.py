@@ -1,7 +1,9 @@
 from enum import Enum
 
+
 class TrainColor(str, Enum):
     """Train card colors in Ticket to Ride"""
+
     RED = "red"
     BLUE = "blue"
     GREEN = "green"
@@ -12,8 +14,10 @@ class TrainColor(str, Enum):
     PINK = "pink"
     LOCOMOTIVE = "locomotive"
 
+
 class PlayerColor(str, Enum):
     """Player colors in Ticket to Ride"""
+
     RED = "red"
     BLUE = "blue"
     GREEN = "green"

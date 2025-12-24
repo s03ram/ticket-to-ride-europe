@@ -1,12 +1,15 @@
-from uuid import UUID, uuid4
 from typing import List
+from uuid import UUID, uuid4
+
 from pydantic import BaseModel, Field
-from src.models.cards import TrainCard, DestinationTicket
+
+from src.models.cards import DestinationTicket, TrainCard
 from src.models.colors import PlayerColor
 
 
 class Player(BaseModel):
     """Represents a player in the game"""
+
     id: UUID = Field(default_factory=uuid4)
     name: str
     train_cards: List[TrainCard] = Field(default_factory=list)
