@@ -20,8 +20,8 @@ class DestinationTicket(BaseModel):
     """Represents a destination ticket connecting two cities"""
 
     id: UUID = Field(default_factory=uuid4)
-    city1: str
-    city2: str
+    city_a: str
+    city_b: str
     points: int
     length: Literal["short", "long"]
 
