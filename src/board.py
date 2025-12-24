@@ -1,35 +1,42 @@
 import networkx as nx
 import json
+import sys
+from pathlib import Path
+
+# Ensure project root is on sys.path so top-level package `data` is importable
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import data.settings as settings
 from data.models.route import Route
-from typing import Optional, List
-from uuid import UUID
+from typing import Optional, List, Dict
+from uuid import UUID, uuid4
 
 
 class Board:
     def __init__(self) -> None:
         """Represents the board. Initializes the routes and creates the graph."""
 
-        self.board = self.__create_weighted_graph()
-        self.routes: list[Route] = []
+        self.routes: Dict[UUID, Route] = {}
         self.__init_routes()
+        self.graph = self.__create_weighted_graph()
 
     def __init_routes(self) -> None:
         """Initialize the routes from the ROUTES data."""
         with open(settings.ROUTES_FILE, "r", encoding="utf-8") as file:
             routes_data = json.load(file)
-        [self.routes.append(Route(**route)) for route in routes_data]
+        for route in routes_data:
+            route = Route(**route)
+            self.routes[route.id] = route
 
     def __create_weighted_graph(self) -> nx.MultiGraph:
         """Create a weighted graph from the routes data
         """
         board = nx.MultiGraph()
-        for route in self.routes:
+        for id, route in self.routes.items():
             board.add_edge(
                 route.city_a,
                 route.city_b,
-                id         = route.id,
+                id         = id,
                 weight     = route.length,
                 color      = route.color,
                 locomotive = route.locomotive,
@@ -38,7 +45,7 @@ class Board:
                 stations   = [])
         return board
 
-    def get_route(self, route_id: str) -> Optional[Route]:
+    def get_route(self, route_id: int) -> Optional[Route]:
         """Get a route by ID"""
         return self.routes.get(route_id)
     
@@ -50,7 +57,7 @@ class Board:
         """Get all routes between two cities"""
         return [
             route for route in self.routes.values()
-            if {route.city1, route.city2} == {city1, city2}
+            if {route.city_a, route.city_b} == {city1, city2}
         ]
     
     def claim_route(self, route_id: str, player_id: UUID) -> bool:

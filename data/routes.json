@@ -1,15 +1,12 @@
 [
     {
-        "id": 1,
         "city_a": "Amsterdam",
         "city_b": "London",
-        "color": false,
         "length": 2,
         "locomotive": 2,
         "tunnel": false
     },
     {
-        "id": 2,
         "city_a": "Amsterdam",
         "city_b": "Bruxelles",
         "color": "grey",
@@ -18,7 +15,6 @@
         "tunnel": false
     },
     {
-        "id": 3,
         "city_a": "Amsterdam",
         "city_b": "Essen",
         "color": "yellow",
@@ -27,7 +23,6 @@
         "tunnel": false
     },
     {
-        "id": 4,
         "city_a": "Angora",
         "city_b": "Smyrna",
         "color": "orange",
@@ -36,16 +31,13 @@
         "tunnel": true
     },
     {
-        "id": 5,
         "city_a": "Angora",
         "city_b": "Constantinople",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 6,
         "city_a": "Angora",
         "city_b": "Erzurum",
         "color": "grey",
@@ -54,16 +46,13 @@
         "tunnel": false
     },
     {
-        "id": 7,
         "city_a": "Athina",
         "city_b": "Brindisi",
-        "color": false,
         "length": 4,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 8,
         "city_a": "Athina",
         "city_b": "Sarajevo",
         "color": "green",
@@ -72,7 +61,6 @@
         "tunnel": false
     },
     {
-        "id": 9,
         "city_a": "Athina",
         "city_b": "Sofia",
         "color": "pink",
@@ -81,16 +69,13 @@
         "tunnel": false
     },
     {
-        "id": 10,
         "city_a": "Athina",
         "city_b": "Smyrna",
-        "color": false,
         "length": 2,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 11,
         "city_a": "Barcelona",
         "city_b": "Madrid",
         "color": "yellow",
@@ -99,25 +84,20 @@
         "tunnel": false
     },
     {
-        "id": 12,
         "city_a": "Barcelona",
         "city_b": "Pamplona",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 13,
         "city_a": "Barcelona",
         "city_b": "Marseille",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 14,
         "city_a": "Berlin",
         "city_b": "Frankfurt",
         "color": "grey",
@@ -126,7 +106,6 @@
         "tunnel": false
     },
     {
-        "id": 15,
         "city_a": "Berlin",
         "city_b": "Frankfurt",
         "color": "red",
@@ -135,7 +114,6 @@
         "tunnel": false
     },
     {
-        "id": 16,
         "city_a": "Berlin",
         "city_b": "Essen",
         "color": "blue",
@@ -144,16 +122,13 @@
         "tunnel": false
     },
     {
-        "id": 17,
         "city_a": "Berlin",
         "city_b": "Danzig",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 18,
         "city_a": "Berlin",
         "city_b": "Warszawa",
         "color": "pink",
@@ -162,7 +137,6 @@
         "tunnel": false
     },
     {
-        "id": 19,
         "city_a": "Berlin",
         "city_b": "Warszawa",
         "color": "yellow",
@@ -171,7 +145,6 @@
         "tunnel": false
     },
     {
-        "id": 20,
         "city_a": "Berlin",
         "city_b": "Wien",
         "color": "green",
@@ -180,7 +153,6 @@
         "tunnel": false
     },
     {
-        "id": 21,
         "city_a": "Brest",
         "city_b": "Dieppe",
         "color": "orange",
@@ -189,7 +161,6 @@
         "tunnel": false
     },
     {
-        "id": 22,
         "city_a": "Brest",
         "city_b": "Paris",
         "color": "grey",
@@ -198,7 +169,6 @@
         "tunnel": false
     },
     {
-        "id": 23,
         "city_a": "Brest",
         "city_b": "Pamplona",
         "color": "pink",
@@ -207,7 +177,6 @@
         "tunnel": false
     },
     {
-        "id": 24,
         "city_a": "Brindisi",
         "city_b": "Roma",
         "color": "white",
@@ -216,16 +185,13 @@
         "tunnel": false
     },
     {
-        "id": 25,
         "city_a": "Brindisi",
         "city_b": "Palermo",
-        "color": false,
         "length": 3,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 26,
         "city_a": "Bruxelles",
         "city_b": "Paris",
         "color": "yellow",
@@ -234,7 +200,6 @@
         "tunnel": false
     },
     {
-        "id": 27,
         "city_a": "Bruxelles",
         "city_b": "Paris",
         "color": "red",
@@ -243,7 +208,6 @@
         "tunnel": false
     },
     {
-        "id": 28,
         "city_a": "Bruxelles",
         "city_b": "Dieppe",
         "color": "green",
@@ -252,7 +216,6 @@
         "tunnel": false
     },
     {
-        "id": 29,
         "city_a": "Bruxelles",
         "city_b": "Frankfurt",
         "color": "blue",
@@ -261,34 +224,27 @@
         "tunnel": false
     },
     {
-        "id": 30,
         "city_a": "Bucuresti",
         "city_b": "Sofia",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 31,
         "city_a": "Bucuresti",
         "city_b": "Budapest",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 32,
         "city_a": "Bucuresti",
         "city_b": "Kyiv",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 33,
         "city_a": "Bucuresti",
         "city_b": "Sevastopol",
         "color": "white",
@@ -297,7 +253,6 @@
         "tunnel": false
     },
     {
-        "id": 34,
         "city_a": "Bucuresti",
         "city_b": "Constantinople",
         "color": "yellow",
@@ -306,7 +261,6 @@
         "tunnel": false
     },
     {
-        "id": 35,
         "city_a": "Budapest",
         "city_b": "Sarajevo",
         "color": "pink",
@@ -315,7 +269,6 @@
         "tunnel": false
     },
     {
-        "id": 36,
         "city_a": "Budapest",
         "city_b": "Zagrab",
         "color": "orange",
@@ -324,7 +277,6 @@
         "tunnel": false
     },
     {
-        "id": 37,
         "city_a": "Budapest",
         "city_b": "Wien",
         "color": "red",
@@ -333,7 +285,6 @@
         "tunnel": false
     },
     {
-        "id": 38,
         "city_a": "Budapest",
         "city_b": "Wien",
         "color": "white",
@@ -342,16 +293,13 @@
         "tunnel": false
     },
     {
-        "id": 39,
         "city_a": "Budapest",
         "city_b": "Kyiv",
-        "color": false,
         "length": 6,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 40,
         "city_a": "Cadiz",
         "city_b": "Madrid",
         "color": "orange",
@@ -360,7 +308,6 @@
         "tunnel": false
     },
     {
-        "id": 41,
         "city_a": "Cadiz",
         "city_b": "Lisboa",
         "color": "blue",
@@ -369,16 +316,13 @@
         "tunnel": false
     },
     {
-        "id": 42,
         "city_a": "Constantinople",
         "city_b": "Smyrna",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 43,
         "city_a": "Constantinople",
         "city_b": "Sofia",
         "color": "blue",
@@ -387,16 +331,13 @@
         "tunnel": false
     },
     {
-        "id": 44,
         "city_a": "Constantinople",
         "city_b": "Sevastopol",
-        "color": false,
         "length": 4,
         "locomotive": 2,
         "tunnel": false
     },
     {
-        "id": 45,
         "city_a": "Danzig",
         "city_b": "Riga",
         "color": "grey",
@@ -405,16 +346,13 @@
         "tunnel": false
     },
     {
-        "id": 46,
         "city_a": "Danzig",
         "city_b": "Warszawa",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 47,
         "city_a": "Dieppe",
         "city_b": "Paris",
         "color": "pink",
@@ -423,25 +361,20 @@
         "tunnel": false
     },
     {
-        "id": 48,
         "city_a": "Dieppe",
         "city_b": "London",
-        "color": false,
         "length": 2,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 49,
         "city_a": "Dieppe",
         "city_b": "London",
-        "color": false,
         "length": 2,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 50,
         "city_a": "Edinburgh",
         "city_b": "London",
         "color": "orange",
@@ -450,7 +383,6 @@
         "tunnel": false
     },
     {
-        "id": 51,
         "city_a": "Edinburgh",
         "city_b": "London",
         "color": "grey",
@@ -459,7 +391,6 @@
         "tunnel": false
     },
     {
-        "id": 52,
         "city_a": "Erzurum",
         "city_b": "Sochi",
         "color": "red",
@@ -468,16 +399,13 @@
         "tunnel": true
     },
     {
-        "id": 53,
         "city_a": "Erzurum",
         "city_b": "Sevastopol",
-        "color": false,
         "length": 4,
         "locomotive": 2,
         "tunnel": false
     },
     {
-        "id": 54,
         "city_a": "Essen",
         "city_b": "Frankfurt",
         "color": "green",
@@ -486,25 +414,20 @@
         "tunnel": false
     },
     {
-        "id": 55,
         "city_a": "Essen",
         "city_b": "Kobenhavn",
-        "color": false,
         "length": 3,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 56,
         "city_a": "Essen",
         "city_b": "Kobenhavn",
-        "color": false,
         "length": 3,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 57,
         "city_a": "Frankfurt",
         "city_b": "Munchen",
         "color": "pink",
@@ -513,7 +436,6 @@
         "tunnel": false
     },
     {
-        "id": 58,
         "city_a": "Frankfurt",
         "city_b": "Paris",
         "color": "white",
@@ -522,7 +444,6 @@
         "tunnel": false
     },
     {
-        "id": 59,
         "city_a": "Frankfurt",
         "city_b": "Paris",
         "color": "orange",
@@ -531,25 +452,20 @@
         "tunnel": false
     },
     {
-        "id": 60,
         "city_a": "Kharkov",
         "city_b": "Moskva",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 61,
         "city_a": "Kharkov",
         "city_b": "Kyiv",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 62,
         "city_a": "Kharkov",
         "city_b": "Rostov",
         "color": "green",
@@ -558,7 +474,6 @@
         "tunnel": false
     },
     {
-        "id": 63,
         "city_a": "Kobenhavn",
         "city_b": "Stockholm",
         "color": "white",
@@ -567,7 +482,6 @@
         "tunnel": false
     },
     {
-        "id": 64,
         "city_a": "Kobenhavn",
         "city_b": "Stockholm",
         "color": "yellow",
@@ -576,25 +490,20 @@
         "tunnel": false
     },
     {
-        "id": 65,
         "city_a": "Kyiv",
         "city_b": "Warszawa",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 66,
         "city_a": "Kyiv",
         "city_b": "Wilno",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 67,
         "city_a": "Kyiv",
         "city_b": "Smolensk",
         "color": "red",
@@ -603,7 +512,6 @@
         "tunnel": false
     },
     {
-        "id": 68,
         "city_a": "Lisboa",
         "city_b": "Madrid",
         "color": "pink",
@@ -612,7 +520,6 @@
         "tunnel": false
     },
     {
-        "id": 69,
         "city_a": "Madrid",
         "city_b": "Pamplona",
         "color": "grey",
@@ -621,7 +528,6 @@
         "tunnel": true
     },
     {
-        "id": 70,
         "city_a": "Madrid",
         "city_b": "Pamplona",
         "color": "white",
@@ -630,7 +536,6 @@
         "tunnel": true
     },
     {
-        "id": 71,
         "city_a": "Marseille",
         "city_b": "Pamplona",
         "color": "red",
@@ -639,16 +544,13 @@
         "tunnel": false
     },
     {
-        "id": 72,
         "city_a": "Marseille",
         "city_b": "Paris",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 73,
         "city_a": "Marseille",
         "city_b": "Zurich",
         "color": "pink",
@@ -657,16 +559,13 @@
         "tunnel": true
     },
     {
-        "id": 74,
         "city_a": "Marseille",
         "city_b": "Roma",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 75,
         "city_a": "Moskva",
         "city_b": "Petrograd",
         "color": "white",
@@ -675,7 +574,6 @@
         "tunnel": false
     },
     {
-        "id": 76,
         "city_a": "Moskva",
         "city_b": "Smolensk",
         "color": "orange",
@@ -684,7 +582,6 @@
         "tunnel": false
     },
     {
-        "id": 77,
         "city_a": "Munchen",
         "city_b": "Zurich",
         "color": "yellow",
@@ -693,7 +590,6 @@
         "tunnel": true
     },
     {
-        "id": 78,
         "city_a": "Munchen",
         "city_b": "Venezia",
         "color": "blue",
@@ -702,7 +598,6 @@
         "tunnel": true
     },
     {
-        "id": 79,
         "city_a": "Munchen",
         "city_b": "Wien",
         "color": "orange",
@@ -711,25 +606,20 @@
         "tunnel": false
     },
     {
-        "id": 80,
         "city_a": "Palermo",
         "city_b": "Roma",
-        "color": false,
         "length": 4,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 81,
         "city_a": "Palermo",
         "city_b": "Smyrna",
-        "color": false,
         "length": 6,
         "locomotive": 2,
         "tunnel": false
     },
     {
-        "id": 82,
         "city_a": "Pamplona",
         "city_b": "Paris",
         "color": "blue",
@@ -738,7 +628,6 @@
         "tunnel": false
     },
     {
-        "id": 83,
         "city_a": "Pamplona",
         "city_b": "Paris",
         "color": "green",
@@ -747,34 +636,27 @@
         "tunnel": false
     },
     {
-        "id": 84,
         "city_a": "Paris",
         "city_b": "Zurich",
-        "color": false,
         "length": 3,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 85,
         "city_a": "Petrograd",
         "city_b": "Stockholm",
-        "color": false,
         "length": 8,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 86,
         "city_a": "Petrograd",
         "city_b": "Riga",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 87,
         "city_a": "Petrograd",
         "city_b": "Wilno",
         "color": "blue",
@@ -783,7 +665,6 @@
         "tunnel": false
     },
     {
-        "id": 88,
         "city_a": "Riga",
         "city_b": "Wilno",
         "color": "green",
@@ -792,7 +673,6 @@
         "tunnel": false
     },
     {
-        "id": 89,
         "city_a": "Roma",
         "city_b": "Venezia",
         "color": "grey",
@@ -801,25 +681,20 @@
         "tunnel": false
     },
     {
-        "id": 90,
         "city_a": "Rostov",
         "city_b": "Sochi",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 91,
         "city_a": "Rostov",
         "city_b": "Sevastopol",
-        "color": false,
         "length": 4,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 92,
         "city_a": "Sarajevo",
         "city_b": "Zagrab",
         "color": "red",
@@ -828,25 +703,20 @@
         "tunnel": false
     },
     {
-        "id": 93,
         "city_a": "Sarajevo",
         "city_b": "Sofia",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": true
     },
     {
-        "id": 94,
         "city_a": "Sevastopol",
         "city_b": "Sochi",
-        "color": false,
         "length": 2,
         "locomotive": 1,
         "tunnel": false
     },
     {
-        "id": 95,
         "city_a": "Smolensk",
         "city_b": "Wilno",
         "color": "yellow",
@@ -855,7 +725,6 @@
         "tunnel": false
     },
     {
-        "id": 96,
         "city_a": "Venezia",
         "city_b": "Zurich",
         "color": "green",
@@ -864,16 +733,13 @@
         "tunnel": true
     },
     {
-        "id": 97,
         "city_a": "Venezia",
         "city_b": "Zagrab",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": false
     },
     {
-        "id": 98,
         "city_a": "Warszawa",
         "city_b": "Wilno",
         "color": "red",
@@ -882,7 +748,6 @@
         "tunnel": false
     },
     {
-        "id": 99,
         "city_a": "Warszawa",
         "city_b": "Wien",
         "color": "blue",
@@ -891,10 +756,8 @@
         "tunnel": false
     },
     {
-        "id": 100,
         "city_a": "Wien",
         "city_b": "Zagrab",
-        "color": false,
         "length": 2,
         "locomotive": 0,
         "tunnel": false

@@ -1,17 +1,18 @@
-from pydantic import BaseModel
-from typing import Optional
-from data.models.city import City
-from uuid import UUID
+from uuid import UUID, uuid4
+from pydantic import BaseModel, Field
+from typing import Optional, List
 
 
 class Route(BaseModel):
-    city_a: City
-    city_b: City
+    id: UUID = Field(default_factory=uuid4)
+    city_a: str
+    city_b: str
     length: int
     color: Optional[str] = None
-    locomotive: Optional[bool] = False
-    tunnel: Optional[bool] = False
+    locomotive: int
+    tunnel: bool = False
     claimed_by: Optional[UUID] = None
+    stations: List[str] = Field(default_factory=list)
 
     def is_claimed(self) -> bool:
         return self.claimed_by is not None
