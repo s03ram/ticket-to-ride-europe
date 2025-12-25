@@ -65,3 +65,6 @@ class City(BaseModel):
     station_claimed_by: Optional[UUID] = Field(
         None, description="Player ID who claimed the station, if any"
     )
+
+    def station_is_claimed(self) -> bool:
+        return self.station_claimed_by is not None
