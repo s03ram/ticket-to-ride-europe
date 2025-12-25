@@ -1,7 +1,11 @@
 from enum import Enum
+from typing import Optional
+from uuid import UUID, uuid4
+
+from pydantic import BaseModel, Field
 
 
-class City(str, Enum):
+class CityName(str, Enum):
     """Represents a city in the game"""
 
     AMSTERDAM = "Amsterdam"
@@ -51,3 +55,13 @@ class City(str, Enum):
     WILNO = "Wilno"
     ZAGRAB = "Zagrab"
     ZURICH = "Zurich"
+
+
+class City(BaseModel):
+    """Represents a city in the game"""
+
+    id: UUID = Field(default_factory=uuid4)
+    name: CityName
+    station_claimed_by: Optional[UUID] = Field(
+        None, description="Player ID who claimed the station, if any"
+    )
