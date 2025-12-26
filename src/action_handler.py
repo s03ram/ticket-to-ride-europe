@@ -4,11 +4,7 @@ from uuid import UUID
 from src.game_state import GameState
 from src.models.colors import TrainColor
 from src.models.game import GamePhase
-from src.models.result_models import (
-    ClaimRouteResult,
-    DrawCardResult,
-    DrawDestinationResult,
-)
+from src.models.result_models import ClaimRouteResult, DrawCardResult, DrawDestinationResult
 from src.models.route import Route
 
 
@@ -35,9 +31,7 @@ class ActionHandler:
 
     # -------- DRAW TRAIN CARDS --------
 
-    def draw_train_cards(
-        self, player_id: UUID, face_up_index: Optional[int] = None
-    ) -> DrawCardResult:
+    def draw_train_cards(self, player_id: UUID, face_up_index: Optional[int] = None) -> DrawCardResult:
         """
         Draw train cards. Player can either:
         - Draw from deck (face_up_index=None)
@@ -69,9 +63,7 @@ class ActionHandler:
         if face_up_index is not None:
             # Drawing from face-up cards
             if not (0 <= face_up_index < len(self.state.train_deck.face_up_cards)):
-                return DrawCardResult(
-                    success=False, cards_drawn=[], message="Invalid face-up card index"
-                )
+                return DrawCardResult(success=False, cards_drawn=[], message="Invalid face-up card index")
 
             card = self.state.train_deck.face_up_cards[face_up_index]
 
@@ -111,9 +103,7 @@ class ActionHandler:
             # Drawing from deck
             card = self.state.train_deck.draw_card()
             if not card:
-                return DrawCardResult(
-                    success=False, cards_drawn=[], message="No cards left in deck"
-                )
+                return DrawCardResult(success=False, cards_drawn=[], message="No cards left in deck")
 
             player.train_cards.append(card)
             cards_drawn.append(card)
@@ -160,9 +150,7 @@ class ActionHandler:
             return ClaimRouteResult(success=False, message=error)
 
         if self.state.actions_taken_this_turn >= 1:
-            return ClaimRouteResult(
-                success=False, message="Already took an action this turn"
-            )
+            return ClaimRouteResult(success=False, message="Already took an action this turn")
 
         player = self.state.get_player(player_id)
         route = self.state.board.get_route(route_id)
@@ -182,28 +170,20 @@ class ActionHandler:
 
         # Validate cards
         if len(cards_to_use) != route.length:
-            return ClaimRouteResult(
-                success=False, message=f"Must use exactly {route.length} cards"
-            )
+            return ClaimRouteResult(success=False, message=f"Must use exactly {route.length} cards")
 
         # Get the actual card objects
         player_card_map = {card.id: card for card in player.train_cards}
         cards = []
         for card_id in cards_to_use:
             if card_id not in player_card_map:
-                return ClaimRouteResult(
-                    success=False, message="Invalid card ID or card not in hand"
-                )
+                return ClaimRouteResult(success=False, message="Invalid card ID or card not in hand")
             cards.append(player_card_map[card_id])
 
         # Validate card colors
         if route.color is not None:
             # Colored route: need matching color + locomotives
-            valid_cards = [
-                c
-                for c in cards
-                if c.color == route.color or c.color == TrainColor.LOCOMOTIVE
-            ]
+            valid_cards = [c for c in cards if c.color == route.color or c.color == TrainColor.LOCOMOTIVE]
             if len(valid_cards) != route.length:
                 return ClaimRouteResult(
                     success=False,
@@ -211,9 +191,7 @@ class ActionHandler:
                 )
         else:
             # Gray route: all cards must be same color (or locomotives)
-            non_locomotive_colors = [
-                c.color for c in cards if c.color != TrainColor.LOCOMOTIVE
-            ]
+            non_locomotive_colors = [c.color for c in cards if c.color != TrainColor.LOCOMOTIVE]
             if non_locomotive_colors:
                 first_color = non_locomotive_colors[0]
                 if not all(c == first_color for c in non_locomotive_colors):
@@ -254,7 +232,7 @@ class ActionHandler:
             route_id=route_id,
             points_earned=points,
             cards_spent=cards,
-            message=f"Claimed route {route.city1}-{route.city2} for {points} points",
+            message=f"Claimed route {route.city_a}-{route.city_b} for {points} points",
         )
 
     # -------- DRAW DESTINATION TICKETS --------
@@ -306,9 +284,7 @@ class ActionHandler:
 
         # Player is choosing which tickets to keep
         if len(tickets_to_keep) < 1:
-            return DrawDestinationResult(
-                success=False, tickets_drawn=[], message="Must keep at least 1 ticket"
-            )
+            return DrawDestinationResult(success=False, tickets_drawn=[], message="Must keep at least 1 ticket")
 
         # Add kept tickets to player's hand
         # (In a real implementation, you'd validate these IDs against recently drawn tickets)
@@ -336,13 +312,8 @@ class ActionHandler:
         actions = []
 
         if self.state.actions_taken_this_turn == 0:
-            actions.extend(
-                ["draw_train_cards", "claim_route", "draw_destination_tickets"]
-            )
-        elif (
-            self.state.actions_taken_this_turn == 1
-            and not self.state.drew_locomotive_this_turn
-        ):
+            actions.extend(["draw_train_cards", "claim_route", "draw_destination_tickets"])
+        elif self.state.actions_taken_this_turn == 1 and not self.state.drew_locomotive_this_turn:
             actions.append("draw_train_cards")  # Can draw second card
 
         return actions
@@ -353,8 +324,4 @@ class ActionHandler:
         if not player:
             return []
 
-        return [
-            route
-            for route in self.state.board.get_available_routes()
-            if player.can_claim_route(route)
-        ]
+        return [route for route in self.state.board.get_available_routes()]
