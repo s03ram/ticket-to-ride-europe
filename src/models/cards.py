@@ -4,6 +4,7 @@ from uuid import UUID, uuid4
 from pydantic import BaseModel, Field
 
 from src.models.colors import TrainColor
+from src.models.city import City
 
 
 class TrainCard(BaseModel):
@@ -20,8 +21,8 @@ class DestinationTicket(BaseModel):
     """Represents a destination ticket connecting two cities"""
 
     id: UUID = Field(default_factory=uuid4)
-    city_a: str
-    city_b: str
+    city_a: City
+    city_b: City
     points: int
     length: Literal["short", "long"]
 

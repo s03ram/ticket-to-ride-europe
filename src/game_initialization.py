@@ -4,11 +4,13 @@ from typing import Dict, List, Optional
 from uuid import UUID, uuid4
 
 from src.board import Board
+from src.game_state import GameState
 from src.models.cards import DestinationTicket
 from src.models.city import City
 from src.models.deck import DestinationTicketDeck, TrainCardDeck
-from src.models.game import GamePhase, GameState
+from src.models.game import GamePhase
 from src.models.player import Player
+from src.models.colors import PlayerColor, TrainColor
 
 
 class GameInitializer:
@@ -20,21 +22,15 @@ class GameInitializer:
     INITIAL_DESTINATION_TICKETS_DRAWN = 3
     MIN_INITIAL_DESTINATION_TICKETS = 2
 
-    PLAYER_COLORS = ["red", "blue", "green", "yellow", "black"]
-
+    PLAYER_COLORS = list(PlayerColor)
+    
     def __init__(
-        self,
-        destination_tickets_file: Optional[str] = None,
-    ):
-        """
-        Initialize the game initializer
-
-        Args:
-            destination_tickets_file: Path to JSON file with destination tickets
-        """
+            self,
+            destination_tickets_file: str,
+        ):
         self.destination_tickets_file = destination_tickets_file
 
-    def load_destination_tickets(self) -> List[DestinationTicket]:
+    def load_destination_tickets(self, destination_tickets_file: str) -> List[DestinationTicket]:
         """
         Load destination tickets from JSON file
 
@@ -48,19 +44,19 @@ class GameInitializer:
             ...
         ]
         """
-        if not self.destination_tickets_file:
+        if not destination_tickets_file:
             raise ValueError("Destination tickets file path not provided")
 
         tickets = []
-        with open(self.destination_tickets_file, "r", encoding="utf-8") as file:
+        with open(destination_tickets_file, "r", encoding="utf-8") as file:
             tickets_data = json.load(file)
 
-        for ticket_data in tickets_data:
+        for ticket in tickets_data:
             ticket = DestinationTicket(
-                city_a=City(name=ticket_data["city_a"]),
-                city_b=City(name=ticket_data["city_b"]),
-                points=ticket_data["points"],
-                length="short" if ticket_data["points"] < 20 else "long",
+                city_a=City(name=ticket["city_a"]),
+                city_b=City(name=ticket["city_b"]),
+                points=ticket["points"],
+                length="short" if ticket["points"] < 20 else "long",
             )
             tickets.append(ticket)
 
@@ -113,7 +109,7 @@ class GameInitializer:
         """
         Load and shuffle destination tickets
         """
-        tickets = self.load_destination_tickets()
+        tickets = self.load_destination_tickets(self.destination_tickets_file)
         destination_deck.initialize_deck(tickets)
 
     def deal_initial_cards(self, players: List[Player], train_deck: TrainCardDeck) -> None:
@@ -285,7 +281,7 @@ class GameInitializationManager:
 
         # Add tickets to player's hand
         player = self.game_state.get_player(player_id)
-        initializer = GameInitializer()
+        initializer = GameInitializer(destination_tickets_file="data/tickets.json")
 
         success = initializer.finalize_initial_tickets(
             player, tickets_to_keep, tickets_to_discard, self.game_state.destination_deck
@@ -324,7 +320,7 @@ if __name__ == "__main__":
     manager.set_pending_tickets(pending_tickets)
 
     # Simulate players selecting tickets
-    for player in game_state.players:
+    for player in game_state.players.values():
         drawn_tickets = pending_tickets[player.id]
         ticket_ids_to_keep = [ticket.id for ticket in drawn_tickets[:2]]  # Keep first 2 tickets
         success, message = manager.player_select_initial_tickets(player.id, ticket_ids_to_keep)

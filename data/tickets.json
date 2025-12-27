@@ -61,7 +61,7 @@
   },
   {
     "city_a": "Edinburgh",
-    "city_b": "paris",
+    "city_b": "Paris",
     "points": 7
   },
   {
@@ -76,7 +76,7 @@
   },
   {
     "city_a": "Barcelona",
-    "city_b": "Muchen",
+    "city_b": "Munchen",
     "points": 8
   },
   {
@@ -131,7 +131,7 @@
   },
   {
     "city_a": "Sarajevo",
-    "city_b": "Sevastopl",
+    "city_b": "Sevastopol",
     "points": 8
   },
   {
@@ -170,7 +170,7 @@
     "points": 10
   },
   {
-    "city_a": "Venizia",
+    "city_a": "Venezia",
     "city_b": "Constantinople",
     "points": 10
   },
@@ -221,7 +221,7 @@
   },
   {
     "city_a": "Edinburgh",
-    "city_b": "Athena",
+    "city_b": "Athina",
     "points": 21
   },
   {
